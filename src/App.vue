@@ -1,13 +1,3 @@
 <template>
-  <header>
-    header
-  </header>
-
-  <main>
-    Welcome
-  </main>
+  <router-view />
 </template>
-
-<script setup></script>
-
-<style scoped></style>
