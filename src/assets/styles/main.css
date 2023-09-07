@@ -4,8 +4,8 @@
 :root {
   --clr-white: #FFF;
   --clr-black: #000;
-  --clr-auth: #CACACA;
   --clr-orange: #FFBE00;
+  --clr-auth: #CACACA;
   --clr-background: #F8F8F8;
   --clr-background-auth: #F5F5F5;
 }

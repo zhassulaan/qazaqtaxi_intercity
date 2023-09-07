@@ -1,7 +1,7 @@
 <template>
 	<div class='auth'>
-		<h2 class='auth-title'>Добро пожаловать!</h2>
-		<h5 class='auth-subtitle'>Пожалуйста войдите в систему</h5>
+		<h6 class='auth-title'>Добро пожаловать!</h6>
+		<h6 class='auth-subtitle'>Пожалуйста войдите в систему</h6>
 
 		<div class='auth-form'>
 			<Input
