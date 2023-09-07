@@ -4,8 +4,10 @@
 :root {
   --clr-white: #FFF;
   --clr-black: #000;
+  --clr-auth: #CACACA;
   --clr-orange: #FFBE00;
   --clr-background: #F8F8F8;
+  --clr-background-auth: #F5F5F5;
 }
 
 *,
@@ -31,4 +33,24 @@ body {
 
 ul {
   list-style-type: none;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 1279px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 40px;
+  }
 }

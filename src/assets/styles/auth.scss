@@ -6,10 +6,6 @@
 	height: 100%;
 	margin: 0 5.9765625vw;
 	padding-top: 32.6923vh;
-	&-back {
-		position: absolute;
-		top: 15.024038vh;
-	}
 	&-subtitle,
 	&-title {
 		width: inherit;
@@ -18,11 +14,13 @@
 	}
 	&-title {
 		line-height: 4.326923vh;
+		font-size: 30px;
 		font-weight: 700;
 		color: var(--clr-black)
 	}
 	&-subtitle {
 		line-height: 2.04327vh;
+		font-size: 15px;
 		font-weight: 400;
 		margin-top: .600962vh;
 	}
@@ -31,37 +29,9 @@
 		flex-direction: column;
 		gap: 2.40385vh;
 		margin-top: 3.00481vh;
-		&__message {
-			width: 100%;
-			line-height: 2.163462vh;
-			color: var(--clr-text-primary);
-		}
-	}
-	&-footer {
-		position: absolute;
-		bottom: 5.88942vh;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2.40385vh;
-		width: 100%;
-		&__text {
-			line-height: 1.682693vh;
-			color: var(--clr-grey-3);
-		}
-		&__slider {
-			display: flex;
-			justify-content: space-between;
-			width: 100%;
-			.slide {
-				width: 76px;
-				height: .96154vh;
-				background-color: var(--clr-background);
-				border-radius: 5px;
-				&.active {
-					background-color: var(--clr-bg-active);
-				}
-			}
+		.button {
+			height: 6.61058vh;
+			font-size: 17px;
 		}
 	}
 }
