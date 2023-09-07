@@ -1,0 +1,34 @@
+.header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 65px;
+	background-color: var(--clr-background);
+	z-index: 2;
+	padding: 0 3.75vw 0 3.125vw;
+	&-left,
+	&-right {
+		display: flex;
+		align-items: center;
+		&__text.active {
+			color: var(--clr-orange);
+		}
+	}
+	&-left {
+		gap: 3.125vw;
+		&__text {
+			color: var(--clr-black);
+			font-size: 24px;
+		}
+	}
+	&-right {
+		gap: 1.5625vw;
+		&__text {
+			color: rgba(51, 51, 51, .60);
+		}
+	}
+}
