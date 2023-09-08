@@ -1,4 +1,6 @@
 @import './auth.scss';
+@import './header.scss';
+@import './welcome.scss';
 @import '../fonts/stylesheet.css';
 
 :root {
@@ -35,8 +37,22 @@ ul {
   list-style-type: none;
 }
 
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-black);
+}
+
 h1 {
   font-size: 40px;
+}
+
+.btn {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1279px) {

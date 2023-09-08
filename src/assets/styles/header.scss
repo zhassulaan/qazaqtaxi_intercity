@@ -21,8 +21,11 @@
 	&-left {
 		gap: 3.125vw;
 		&__text {
-			color: var(--clr-black);
 			font-size: 24px;
+			font-weight: 500;
+			&.active {
+				font-size: 40px;
+			}
 		}
 	}
 	&-right {

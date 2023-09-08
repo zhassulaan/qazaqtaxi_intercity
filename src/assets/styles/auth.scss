@@ -6,8 +6,8 @@
 	height: 100%;
 	margin: 0 5.9765625vw;
 	padding-top: 32.6923vh;
-	&-subtitle,
-	&-title {
+	&-title,
+	&-subtitle {
 		width: inherit;
 		word-wrap: break-word;
 		hyphens: auto;
@@ -16,7 +16,6 @@
 		line-height: 4.326923vh;
 		font-size: 30px;
 		font-weight: 700;
-		color: var(--clr-black)
 	}
 	&-subtitle {
 		line-height: 2.04327vh;
