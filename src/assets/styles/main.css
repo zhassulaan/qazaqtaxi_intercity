@@ -7,6 +7,7 @@
 :root {
   --clr-white: #FFF;
   --clr-black: #000;
+  --clr-grey: #E6E6E6;
   --clr-grey-3: #8C8C8C;
   --clr-orange: #FFBE00;
   --clr-auth: #CACACA;
@@ -58,8 +59,11 @@ h2, h3 {
 h2 {
   font-weight: 600;
 }
-h3 {
+h3, p {
   font-weight: 500;
+}
+p {
+  font-size: 15px;
 }
 
 .btn {
