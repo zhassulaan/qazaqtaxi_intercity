@@ -1,5 +1,9 @@
 <template>
 	<main class='home'>
-		<h1>Analytics</h1>
+		<Statistics />
   </main>
 </template>
+
+<script setup>
+import Statistics from '@/components/Statistics.vue';
+</script>

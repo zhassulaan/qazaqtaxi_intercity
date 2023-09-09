@@ -142,7 +142,7 @@ function handle_toggle(id) {
 				display: flex;
 				justify-content: space-between;
 				max-height: 100vh;
-				background-color: var(--clr-grey-2);
+				background-color: var(--clr-grey);
 				border-radius: 19px;
 				padding: 22px 0 22px 2.34375vw;
 				overflow: hidden;

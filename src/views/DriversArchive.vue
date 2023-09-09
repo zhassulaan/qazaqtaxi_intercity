@@ -3,10 +3,7 @@
 		<Controller />
 		<div class='home-control'>
 			<Search />
-			<Button
-				text='Скачать данные'
-				@click=''
-			/>
+			<Download />
 		</div>
 		
 		<Table :list='list_info'></Table>
@@ -14,7 +11,7 @@
 </template>
 
 <script setup>
-import Button from '@/components/Button.vue';
+import Download from '@/components/Download.vue';
 import Controller from '@/components/Controller.vue';
 import Search from '@/components/Search.vue';
 import Table from '@/components/Table.vue';
