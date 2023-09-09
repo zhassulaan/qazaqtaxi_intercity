@@ -1,5 +1,11 @@
 <template>
-	<main>
-		<h1>DriversList</h1>
+	<main class='home'>
+		<Controller />
+		<Search />
   </main>
 </template>
+
+<script setup>
+import Controller from '@/components/Controller.vue';
+import Search from '@/components/Search.vue';
+</script>

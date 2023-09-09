@@ -1,11 +1,13 @@
 @import './auth.scss';
 @import './header.scss';
+@import './home.scss';
 @import './welcome.scss';
 @import '../fonts/stylesheet.css';
 
 :root {
   --clr-white: #FFF;
   --clr-black: #000;
+  --clr-grey-3: #8C8C8C;
   --clr-orange: #FFBE00;
   --clr-auth: #CACACA;
   --clr-background: #F8F8F8;
@@ -49,6 +51,15 @@ a {
 
 h1 {
   font-size: 40px;
+}
+h2, h3 {
+  font-size: 20px;
+}
+h2 {
+  font-weight: 600;
+}
+h3 {
+  font-weight: 500;
 }
 
 .btn {
