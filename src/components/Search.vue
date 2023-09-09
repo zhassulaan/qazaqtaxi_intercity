@@ -1,6 +1,6 @@
 <template>
 	<div class='search'>
-		<search-icon />
+		<icon-search />
 		<input
 			type='text'
 			placeholder='Поиск'
@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import SearchIcon from '@/components/icons/Search.vue';
+import IconSearch from '@/components/icons/Search.vue';
 </script>
 
 <style scoped lang='scss'>

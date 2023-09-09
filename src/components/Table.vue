@@ -22,11 +22,11 @@
 					<span class='a'>
 						<p v-if='item.a'>{{ item.a }}</p>
 						<p v-if='item.rating'>{{ item.rating }}</p>
-						<star-icon class='a-star' v-if='item.rating' v-for='i in Math.floor(item.rating)' />
+						<icon-star class='a-star' v-if='item.rating' v-for='i in Math.floor(item.rating)' />
 						<div class='a-star'>
-							<star-icon v-if='item.rating' />
+							<icon-star v-if='item.rating' />
 							<div class='a-star__mask' :style="{ width: (item.rating - Math.floor(item.rating)) * 100 + '%' }">
-								<star-icon v-if='item.rating' />
+								<icon-star v-if='item.rating' />
 							</div>
 					</div>
 					</span>
@@ -46,7 +46,7 @@
 
 <script setup>
 import { computed, ref } from 'vue';
-import StarIcon from '@/components/icons/Star.vue';
+import IconStar from '@/components/icons/Star.vue';
 
 const prop = defineProps({
 	list: Array,
