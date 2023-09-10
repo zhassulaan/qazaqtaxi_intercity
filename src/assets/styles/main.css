@@ -12,12 +12,14 @@
   --clr-grey: #E6E6E6;
   --clr-grey-3: #8C8C8C;
   --clr-orange: #FFBE00;
+  --clr-green: #24C43E;
   --clr-blue: #6481E1;
   --clr-auth: #CACACA;
   --clr-text-primary: #3D3D3D;
   --clr-text-secondary: #939393;
   --clr-background: #F8F8F8;
   --clr-background-auth: #F5F5F5;
+  --clr-border: #F1F1F1;
 }
 
 *,

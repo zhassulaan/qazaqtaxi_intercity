@@ -35,22 +35,7 @@
 				.a {
 					display: flex;
 					align-items: center;
-					gap: .390625vw;
-					&-star {
-						position: relative;
-						height: 26px;
-						fill: var(--clr-orange);
-						&:last-child {
-							fill: transparent;
-						}
-						&__mask {
-							position: absolute;
-							top: 0;
-							left: 0;
-							overflow: hidden;
-							fill: var(--clr-orange);
-						}
-					}
+					gap: 1px;
 				}
 			}
 			&-detail {
