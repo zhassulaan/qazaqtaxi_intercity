@@ -4,35 +4,7 @@
 		display: flex;
 		gap: 3.125vw;
 		.button {
-			width: 188px;
-			font-size: 15px;
-			font-weight: 600;
 			margin-top: 20px;
-		}
-	}
-	.new-column__box {
-		display: grid;
-		grid-gap: 5px;
-		.input {
-			width: 21.875vw;
-			height: 53px;
-			font-size: 20px;
-		}
-	}
-	.application {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		width: 100%;
-		grid-gap: 20px 0;
-		padding: 3px 0;
-		&-box {
-			display: grid;
-			grid-gap: 5px;
-			.button {
-				width: 21.875vw;
-				height: 53px;
-				margin-top: auto;
-			}
 		}
 	}
 }

@@ -19,16 +19,11 @@
 					<p class='name'>{{ item.name }}</p>
 					<p class='number'>{{ item.phone }}</p>
 					<p class='city'>{{ item.city }}</p>
-					<span class='a'>
-						<p v-if='item.a'>{{ item.a }}</p>
-						<p v-if='item.rating'>{{ item.rating }}</p>
-						<icon-star class='a-star' v-if='item.rating' v-for='i in Math.floor(item.rating)' />
-						<div class='a-star'>
-							<icon-star v-if='item.rating' />
-							<div class='a-star__mask' :style="{ width: (item.rating - Math.floor(item.rating)) * 100 + '%' }">
-								<icon-star v-if='item.rating' />
-							</div>
-					</div>
+					<p class='a' v-if='!item.a && !item.rating'></p>
+					<p class='a' v-else-if='item.a'>{{ item.a }}</p>
+					<span class='a' v-else>
+						<p>{{ item.rating }}</p>
+						<Stars :rating='item.rating' />
 					</span>
 					<p class='b'>{{ item.b || item.date }}</p>
 				</div>
@@ -46,7 +41,7 @@
 
 <script setup>
 import { computed, ref } from 'vue';
-import IconStar from '@/components/icons/Star.vue';
+import Stars from '@/components/Stars.vue';
 
 const prop = defineProps({
 	list: Array,

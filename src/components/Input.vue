@@ -2,8 +2,8 @@
 	<input class='input'
 		:type='type'
     :placeholder='text'
-    :value="masked_input"
-    @input="handleInput"
+    :value='masked_input'
+    @input='handleInput'
 	/>
 </template>
 
