@@ -7,7 +7,7 @@
 
 		<Table :list='list_info'>
 			<template #detail='{ item }'>
-				<Profile :user='item' />
+				<Bio :user='item' :history='false' />
 			</template>
 		</Table>
   </main>
@@ -15,7 +15,7 @@
 
 <script setup>
 import Download from '@/components/Download.vue';
-import Profile from '@/components/Profile.vue';
+import Bio from '@/components/Bio.vue';
 import Search from '@/components/Search.vue';
 import Table from '@/components/Table.vue';
 import ava from '@/assets/images/ava.png';

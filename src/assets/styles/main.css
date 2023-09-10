@@ -10,9 +10,11 @@
   --clr-white: #FFF;
   --clr-black: #000;
   --clr-grey: #E6E6E6;
+  --clr-grey-2: #D9D9D9;
   --clr-grey-3: #8C8C8C;
   --clr-orange: #FFBE00;
   --clr-green: #24C43E;
+  --clr-red: #c43924;
   --clr-blue: #6481E1;
   --clr-auth: #CACACA;
   --clr-text-primary: #3D3D3D;
@@ -68,6 +70,11 @@ h2, h3 {
 }
 h2 {
   font-weight: 600;
+}
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--clr-grey-2);
 }
 p {
   font-size: 15px;

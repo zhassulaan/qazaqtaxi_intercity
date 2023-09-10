@@ -5,7 +5,7 @@
 
 		<Table :list='list_info'>
 			<template #detail='{ item }'>
-				<Profile :user='item' />
+				<Bio :user='item' />
 			</template>
 		</Table>
   </main>
@@ -13,7 +13,7 @@
 
 <script setup>
 import Controller from '@/components/Controller.vue';
-import Profile from '@/components/Profile.vue';
+import Bio from '@/components/Bio.vue';
 import Search from '@/components/Search.vue';
 import Table from '@/components/Table.vue';
 import ava from '@/assets/images/ava.png';
@@ -24,6 +24,7 @@ const list_info = [
 		name: 'Алибеков Алибек Алибекулы',
 		role: 'Водитель',
 		avatar: ava,
+		status: true,
 		phone: '+7 777 777 77 77',
 		email: 'example@mail.com',
 		birthday: '15.06.2000',
@@ -40,6 +41,7 @@ const list_info = [
 		name: 'Алибеков Алибек Алибекулы',
 		role: 'Водитель',
 		avatar: ava,
+		status: true,
 		phone: '+7 777 777 77 77',
 		email: 'example@mail.com',
 		birthday: '15.06.2000',
@@ -56,6 +58,7 @@ const list_info = [
 		name: 'Алибеков Алибек Алибекулы',
 		role: 'Водитель',
 		avatar: ava,
+		status: true,
 		phone: '+7 777 777 77 77',
 		email: 'example@mail.com',
 		birthday: '15.06.2000',
@@ -72,6 +75,7 @@ const list_info = [
 		name: 'Алибеков Алибек Алибекулы',
 		role: 'Водитель',
 		avatar: ava,
+		status: true,
 		phone: '+7 777 777 77 77',
 		email: 'example@mail.com',
 		birthday: '15.06.2000',
@@ -88,6 +92,7 @@ const list_info = [
 		name: 'Алибеков Алибек Алибекулы',
 		role: 'Водитель',
 		avatar: ava,
+		status: true,
 		phone: '+7 777 777 77 77',
 		email: 'example@mail.com',
 		birthday: '15.06.2000',
@@ -104,6 +109,7 @@ const list_info = [
 		name: 'Алибеков Алибек Алибекулы',
 		role: 'Водитель',
 		avatar: ava,
+		status: true,
 		phone: '+7 777 777 77 77',
 		email: 'example@mail.com',
 		birthday: '15.06.2000',
@@ -120,6 +126,7 @@ const list_info = [
 		name: 'Алибеков Алибек Алибекулы',
 		role: 'Водитель',
 		avatar: ava,
+		status: true,
 		phone: '+7 777 777 77 77',
 		email: 'example@mail.com',
 		birthday: '15.06.2000',
