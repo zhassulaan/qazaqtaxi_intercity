@@ -89,9 +89,7 @@
 
 			<div class='bio-body__row-buttons' v-if="id !== 'history'">
 				<Button text='Редактировать'>
-					<template #detail>
-						<icon-pen class='button-icon' />
-					</template>
+					<icon-pen class='button-icon' />
 				</Button>
 				<Button text='Активировать' v-if="id === 'archive'" />
 				<Button text='Деактивировать' v-if="id === 'list'" />

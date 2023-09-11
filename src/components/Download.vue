@@ -3,9 +3,7 @@
 		text='Скачать данные'
 		@click=''
 	>
-		<template #detail>
-			<icon-download class='button-icon' />
-		</template>
+		<icon-download class='button-icon' />
 	</Button>
 </template>
 

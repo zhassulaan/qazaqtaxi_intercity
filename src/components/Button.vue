@@ -1,7 +1,7 @@
 <template>
 	<button class='button btn'>
 		{{ text }}
-		<slot name='detail'></slot>
+		<slot></slot>
 	</button>
 </template>
 
