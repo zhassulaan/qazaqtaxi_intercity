@@ -21,7 +21,7 @@
 
 					<div class='controller btn'
 						:class="{ 'active': active === 2 }"
-						v-if='history'
+						v-if='!history'
 						@click='active = 2'
 					>
 						<icon-documents />
@@ -41,27 +41,29 @@
 				<p class='text'>Номер</p>
 				<p class='text'>{{ user.phone }}</p>
 			</div>
-			<div class='bio-body__row'>
+			<div class='bio-body__row' v-if='!history'>
 				<p class='text'>Почта</p>
 				<p class='text'>{{ user.email }}</p>
 			</div>
-			<div class='bio-body__row'>
+			<div class='bio-body__row' v-if='!history'>
 				<p class='text'>День рождение</p>
 				<p class='text'>{{ user.birthday }}</p>
 			</div>
 
-			<h4 class='bio-body__title'>Документы</h4>
-			<div class='bio-body__row'>
-				<p class='text'>№ водительского уд.</p>
-				<p class='text'>{{ user.document }}</p>
-			</div>
-			<div class='bio-body__row'>
-				<p class='text'>Годен до</p>
-				<p class='text'>{{ user.document_date }}</p>
-			</div>
-			<div class='bio-body__row'>
-				<p class='text'>№ техпаспорта</p>
-				<p class='text'>{{ user.teckpassport }}</p>
+			<div v-if='!history'>
+				<h4 class='bio-body__title'>Документы</h4>
+				<div class='bio-body__row'>
+					<p class='text'>№ водительского уд.</p>
+					<p class='text'>{{ user.document }}</p>
+				</div>
+				<div class='bio-body__row'>
+					<p class='text'>Годен до</p>
+					<p class='text'>{{ user.document_date }}</p>
+				</div>
+				<div class='bio-body__row'>
+					<p class='text'>№ техпаспорта</p>
+					<p class='text'>{{ user.teckpassport }}</p>
+				</div>
 			</div>
 
 			<h4 class='bio-body__title'>Информация</h4>
@@ -73,20 +75,66 @@
 				<p class='text'>Город</p>
 				<p class='text'>{{ user.city }}</p>
 			</div>
-			<div class='bio-body__row'>
+			<div class='bio-body__row' v-if='!history'>
 				<p class='text'>Статус фото</p>
 				<p class='text' v-if='user.status' style='color: var(--clr-green)'>Подтверждена</p>
 				<p class='text' v-else style='color: var(--clr-red)'>Не подтверждена</p>
 			</div>
+
+			<div class='bio-body__row-buttons'>
+				<Button text='Редактировать' />
+				<Button text='Активировать' />
+			</div>
 		</div>
+		
 		<div class='bio-body' v-else>
 			<h4 class='bio-body__title'>Фото документа</h4>
+			<div class='bio-body__box'>
+				<h5 class='bio-body__box-title'>Водительское удостоверение</h5>
+				<p class='bio-body__box-subtitle'>Фото с переди</p>
+				<div class='bio-body__box-image'>
+					<img class='image' src='@/assets/images/document.png' alt='driver document front' />
+				</div>
+				<div class='bio-body__box-buttons'>
+					<p class='btn'>Просмотр</p>
+					<p class='btn'>Изменить</p>
+				</div>
+
+				<p class='bio-body__box-subtitle'>Фото сзади</p>
+				<div class='bio-body__box-image'>
+					<img class='image' src='@/assets/images/document.png' alt='driver document back' />
+				</div>
+				<div class='bio-body__box-buttons'>
+					<p class='btn'>Просмотр</p>
+					<p class='btn'>Изменить</p>
+				</div>
+
+				<h5 class='bio-body__box-title'>Технический паспорт</h5>
+				<p class='bio-body__box-subtitle'>Фото с переди</p>
+				<div class='bio-body__box-image'>
+					<img class='image' src='@/assets/images/document.png' alt='tech document front' />
+				</div>
+				<div class='bio-body__box-buttons'>
+					<p class='btn'>Просмотр</p>
+					<p class='btn'>Изменить</p>
+				</div>
+
+				<p class='bio-body__box-subtitle'>Фото сзади</p>
+				<div class='bio-body__box-image'>
+					<img class='image' src='@/assets/images/document.png' alt='tech document back' />
+				</div>
+				<div class='bio-body__box-buttons'>
+					<p class='btn'>Просмотр</p>
+					<p class='btn'>Изменить</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import Button from '@/components/Button.vue';
 import Stars from '@/components/Stars.vue';
 import IconProfile from '@/components/icons/Profile.vue';
 import IconDocuments from '@/components/icons/Documents.vue';
@@ -95,7 +143,7 @@ const prop = defineProps({
 	user: Object,
 	history: {
 		type: Boolean,
-		default: true,
+		default: false,
 	},
 });
 const active = ref(1);
@@ -103,14 +151,24 @@ const active = ref(1);
 
 <style scoped lang='scss'>
 	.bio {
-		width: 29.0625vw;
+		width: 372px;
+		// width: 29.0625vw;
+		height: 624px;
 		background-color: var(--clr-white);
 		border: 1px solid var(--clr-border);
 		border-radius: 20px;
-		padding: 22px 1.953125vw 18px 1.875vw;
+		padding: 22px 24px 18px;
+		// padding: 22px 1.875vw 18px;
+		overflow: scroll;
+		-ms-overflow-style: none;
+    scrollbar-width: none;
+		&::-webkit-scrollbar { 
+			display: none;
+		}
 		&-header {
 			display: flex;
-			gap: 2.34375vw;
+			gap: 20px;
+			// gap: 2.34375vw;
 			&__avatar {
 				max-width: 100px;
 				max-height: 100px;
@@ -170,6 +228,14 @@ const active = ref(1);
 			&__title {
 				margin: 20px 0 -5px;
 			}
+			&__row,
+			&__box {
+				&-buttons {
+					display: flex;
+					width: max-content;
+					height: 38px;
+				}
+			}
 			&__row {
 				display: flex;
 				justify-content: space-between;
@@ -178,6 +244,54 @@ const active = ref(1);
 					line-height: 12px;
 					color: var(--clr-primary);
 					margin-top: 20px;
+				}
+				&-buttons {
+					gap: 13px;
+					margin-top: 20px;
+					.button {
+						width: 156px;
+					}
+					:first-child {
+						background: var(--clr-grey-2);
+					}
+					:last-child {
+						background: var(--clr-orange);
+					}
+				}
+			}
+			&__box {
+				padding: 0 30px 14px;
+				// padding: 20px 2.34375vw 31px;
+				&-title {
+					margin-top: 20px;
+				}
+				&-subtitle {
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 14px;
+					margin-top: 4px;
+				}
+				&-image {
+					width: 207px;
+					height: 130px;
+					backdrop-filter: blur(2px);
+					border-radius: 6px;
+					overflow: hidden;
+					margin: 15px auto 0;
+					.image {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				&-buttons {
+					gap: 30px;
+					margin: 9px auto 17px;
+					.btn {
+						color: var(--clr-orange);
+						font-size: 12px;
+						line-height: 14px;
+						text-decoration-line: underline;
+					}
 				}
 			}
 		}

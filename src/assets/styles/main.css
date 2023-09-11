@@ -74,7 +74,13 @@ h2 {
 h4 {
   font-size: 18px;
   font-weight: 700;
+  line-height: 16px;
   color: var(--clr-grey-2);
+}
+h5 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
 }
 p {
   font-size: 15px;
