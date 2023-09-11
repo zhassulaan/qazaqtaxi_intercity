@@ -7,4 +7,10 @@
 			margin-top: 20px;
 		}
 	}
+	.bio {
+		height: 624px;
+	}
+	&.history .bio {
+		height: 364px;
+	}
 }

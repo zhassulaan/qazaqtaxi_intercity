@@ -8,7 +8,7 @@
 		
 		<Table :list='list_info'>
 			<template #detail='{ item }'>
-				<Bio :user='item' />
+				<Bio id='archive' :user='item' />
 			</template>
 		</Table>
   </main>

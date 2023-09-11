@@ -3,6 +3,12 @@
 		<div class='bio-header'>
 			<div class='bio-header__avatar'>
 				<img class='bio-header__avatar-image' :src='user.avatar' alt='ava' />
+				<icon-checkmark class='checkmark' />
+				<div class='btn'>
+					<div class='pen'>
+						<icon-pen />
+					</div>
+				</div>
 			</div>
 
 			<div class='bio-header__info'>
@@ -21,7 +27,7 @@
 
 					<div class='controller btn'
 						:class="{ 'active': active === 2 }"
-						v-if='!history'
+						v-if="id !== 'history'"
 						@click='active = 2'
 					>
 						<icon-documents />
@@ -41,16 +47,16 @@
 				<p class='text'>Номер</p>
 				<p class='text'>{{ user.phone }}</p>
 			</div>
-			<div class='bio-body__row' v-if='!history'>
+			<div class='bio-body__row' v-if="id !== 'history'">
 				<p class='text'>Почта</p>
 				<p class='text'>{{ user.email }}</p>
 			</div>
-			<div class='bio-body__row' v-if='!history'>
+			<div class='bio-body__row' v-if="id !== 'history'">
 				<p class='text'>День рождение</p>
 				<p class='text'>{{ user.birthday }}</p>
 			</div>
 
-			<div v-if='!history'>
+			<div v-if="id !== 'history'">
 				<h4 class='bio-body__title'>Документы</h4>
 				<div class='bio-body__row'>
 					<p class='text'>№ водительского уд.</p>
@@ -75,15 +81,20 @@
 				<p class='text'>Город</p>
 				<p class='text'>{{ user.city }}</p>
 			</div>
-			<div class='bio-body__row' v-if='!history'>
+			<div class='bio-body__row' v-if="id !== 'history'">
 				<p class='text'>Статус фото</p>
 				<p class='text' v-if='user.status' style='color: var(--clr-green)'>Подтверждена</p>
 				<p class='text' v-else style='color: var(--clr-red)'>Не подтверждена</p>
 			</div>
 
-			<div class='bio-body__row-buttons'>
-				<Button text='Редактировать' />
-				<Button text='Активировать' />
+			<div class='bio-body__row-buttons' v-if="id !== 'history'">
+				<Button text='Редактировать'>
+					<template #detail>
+						<icon-pen class='button-icon' />
+					</template>
+				</Button>
+				<Button text='Активировать' v-if="id === 'archive'" />
+				<Button text='Деактивировать' v-if="id === 'list'" />
 			</div>
 		</div>
 		
@@ -136,15 +147,14 @@
 import { ref } from 'vue';
 import Button from '@/components/Button.vue';
 import Stars from '@/components/Stars.vue';
-import IconProfile from '@/components/icons/Profile.vue';
+import IconCheckmark from '@/components/icons/Checkmark.vue';
 import IconDocuments from '@/components/icons/Documents.vue';
+import IconPen from '@/components/icons/Pen.vue';
+import IconProfile from '@/components/icons/Profile.vue';
 
 const prop = defineProps({
+	id: String,
 	user: Object,
-	history: {
-		type: Boolean,
-		default: false,
-	},
 });
 const active = ref(1);
 </script>
@@ -153,7 +163,6 @@ const active = ref(1);
 	.bio {
 		width: 372px;
 		// width: 29.0625vw;
-		height: 624px;
 		background-color: var(--clr-white);
 		border: 1px solid var(--clr-border);
 		border-radius: 20px;
@@ -170,13 +179,40 @@ const active = ref(1);
 			gap: 20px;
 			// gap: 2.34375vw;
 			&__avatar {
+				position: relative;
 				max-width: 100px;
 				max-height: 100px;
-				border-radius: 7px;
-				overflow: hidden;
 				&-image {
 					width: 100%;
 					height: 100%;
+					border-radius: 7px;
+				}
+				.checkmark,
+				.btn {
+					position: absolute;
+				}
+				.checkmark {
+					top: 5px;
+					left: 5px;
+				}
+				.btn,
+				.pen {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 50%;
+				}
+				.btn {
+					bottom: -3px;
+					right: -15px;
+					width: 30px;
+					height: 30px;
+					background-color: var(--clr-white);
+					.pen {
+						width: 25px;
+						height: 25px;
+						background-color: var(--clr-orange);
+					}
 				}
 			}
 			&__info {
@@ -215,9 +251,9 @@ const active = ref(1);
 								content: '';
 								bottom: 0;
 								left: 0;
-								background-color: var(--clr-black);
 								width: 100%;
 								height: 1px;
+								background-color: var(--clr-black);
 							}
 						}
 					}
@@ -248,14 +284,18 @@ const active = ref(1);
 				&-buttons {
 					gap: 13px;
 					margin-top: 20px;
-					.button {
-						width: 156px;
-					}
 					:first-child {
 						background: var(--clr-grey-2);
 					}
 					:last-child {
 						background: var(--clr-orange);
+					}
+					.button {
+						width: 156px;
+						font-size: 15px;
+						&-icon {
+							background-color: transparent;
+						}
 					}
 				}
 			}

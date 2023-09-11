@@ -5,7 +5,7 @@
 
 		<Table :list='list_info'>
 			<template #detail='{ item }'>
-				<Bio :user='item' />
+				<Bio id='list' :user='item' />
 			</template>
 		</Table>
   </main>

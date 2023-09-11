@@ -1,5 +1,5 @@
 <template>
-	<main class='home'>
+	<main class='history home'>
 		<div class='home-control'>
 			<Search />
 			<Download />
@@ -7,7 +7,7 @@
 
 		<Table :list='list_info'>
 			<template #detail='{ item }'>
-				<Bio :user='item' :history='true' />
+				<Bio id='history' :user='item' />
 			</template>
 		</Table>
   </main>
