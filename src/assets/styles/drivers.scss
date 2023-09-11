@@ -1,0 +1,46 @@
+.drivers {
+	display: flex;
+	gap: 2.5vw;
+	margin: 0 auto;
+	&-right {
+		width: 43.125vw;
+		&__header {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+			.filter {
+				width: 267px;
+				height: 40px;
+				&-text {
+					width: calc(50% - 43px / 2);
+					font-size: 18px;
+				}
+				&-icon {
+					width: 43px;
+				}
+			}
+		}
+		&__body {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px 1.5625vw;
+			.counter {
+				&:first-child,
+				&:nth-child(2) {
+					width: 20.703125vw;
+					padding-top: 74px !important;
+					padding-bottom: 20px !important;
+					.counter-body__total {
+						grid-gap: 10px;
+						.title {
+							line-height: 24px;
+						}
+					}
+				}
+				&:last-child {
+					padding-bottom: 31px !important;
+				}
+			}
+		}
+	}
+}

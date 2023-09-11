@@ -5,7 +5,7 @@
 
 		<Table :list='list_info'>
 			<template #detail='{ item }'>
-				<Bio id='list' :user='item' />
+				<Drivers id='list' :info='item' />
 			</template>
 		</Table>
   </main>
@@ -13,7 +13,7 @@
 
 <script setup>
 import Controller from '@/components/Controller.vue';
-import Bio from '@/components/Bio.vue';
+import Drivers from '@/components/layouts/Drivers.vue';
 import Search from '@/components/Search.vue';
 import Table from '@/components/Table.vue';
 import ava from '@/assets/images/ava.png';

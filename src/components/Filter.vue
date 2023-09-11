@@ -81,12 +81,9 @@ function selectDay(new_active_date) {
 	position: relative;
 	display: flex;
 	align-items: center;
-	width: 333px;
-	height: 53px;
 	background-color: #F8F8F8;
 	border-radius: 10px;
 	&-text {
-		width: calc(50% - 48px / 2);
 		text-align: center;
 		color: var(--clr-text-primary);
 		&:first-child {
@@ -109,7 +106,6 @@ function selectDay(new_active_date) {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 48px;
 		height: 100%;
 		background-color: var(--clr-orange);
 		border-radius: 0 10px 10px 0;

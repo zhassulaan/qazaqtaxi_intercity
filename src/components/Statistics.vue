@@ -82,6 +82,16 @@ const icons = ['user', 'profit', 'order'];
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		.filter {
+			width: 333px;
+			height: 53px;
+			&-text {
+				width: calc(50% - 48px / 2);
+			}
+			&-icon {
+				width: 48px;
+			}
+		}
 	}
 	&-container {
 		display: flex;

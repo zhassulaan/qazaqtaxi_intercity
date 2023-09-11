@@ -1,5 +1,13 @@
 <template>
  	<div class='counter'>
+		<icon-bonus
+			class='counter-icon'
+			v-if="icon === 'bonus'"
+		/>
+		<icon-currency
+			class='counter-icon'
+			v-if="icon === 'currency'"
+		/>
 		<icon-order
 			class='counter-icon'
 			v-if="icon === 'order'"
@@ -35,8 +43,10 @@
 </template>
 
 <script setup>
-import IconProfit from '@/components/icons/Profit.vue';
+import IconBonus from '@/components/icons/Bonus.vue';
+import IconCurrency from '@/components/icons/Currency.vue';
 import IconOrder from '@/components/icons/Order.vue';
+import IconProfit from '@/components/icons/Profit.vue';
 import IconUser from '@/components/icons/User.vue';
 
 const props = defineProps({
