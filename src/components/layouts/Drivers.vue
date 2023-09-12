@@ -19,7 +19,26 @@
 				<Counter
 					:statistic='info3'
 					:icon='icons[2]'
-				/>
+				>
+					<div class='counter-body__percentage'>
+						<div class='counter-body__percentage-box'
+							:style="{ width: (info3.number1.number * 473 / info3.total.number) + 'px' }"
+						>
+							<h1 class='text'>{{ (info3.number1.number * 100 / info3.total.number).toFixed(1) + ' %' }}</h1>
+							<p class='lastmonth'>
+								<span class='btn'>+15%</span> за последний месяц
+							</p>
+						</div>
+						<div class='counter-body__percentage-box'
+							:style="{ width: (info3.number2.number * 473 / info3.total.number) + 'px' }"
+						>
+							<h1 class='text'>{{ (info3.number2.number * 100 / info3.total.number).toFixed(1) + ' %' }}</h1>
+							<p class='lastmonth'>
+								<span class='btn'>-3%</span> за последний месяц
+							</p>
+						</div>
+					</div>
+				</Counter>
 			</div>
 		</div>
 	</div>

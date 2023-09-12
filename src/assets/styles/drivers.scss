@@ -40,6 +40,28 @@
 				&:last-child {
 					padding-bottom: 31px !important;
 				}
+				&-body__percentage {
+					display: flex;
+					gap: 1.09375vw;
+					&-box {
+						min-width: 11.71875vw;
+						margin-top: 30px;
+						.text {
+							font-size: 30px;
+							line-height: 40px;
+							color: rgba(85, 85, 85, .4);
+							background: linear-gradient(109deg, var(--clr-orange) .92%, rgba(255, 190, 0, .19) 100%);
+							border-radius: 10px;
+							padding-left: 1.171875vw;
+						}
+						.lastmonth {
+							margin-top: 8px;
+							.btn {
+								color: var(--clr-orange);
+							}
+						}
+					}
+				}
 			}
 		}
 	}
