@@ -19,6 +19,9 @@
 		.a,
 		.b {
 			width: 13.4375vw;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 	}
 	&-header {

@@ -1,13 +1,50 @@
 <template>
-	<main class='history home'>
+	<main class='home'>
 		<div class='home-control'>
 			<Search />
 			<Download />
 		</div>
 
-		<Table :list='list_info'>
+		<Table id='history' :list='users'>
 			<template #detail='{ item }'>
-				<Bio id='history' :user='item' />
+				<div class='history'>
+					<Bio id='history' :user='item' />
+
+					<div class='history-right'>
+						<div>
+							<p>Дата поездки</p>
+							<Text :text='item.order_date'/>
+						</div>
+						<div>
+							<p>Точка А</p>
+							<Text :text='item.a' />
+						</div>
+						<div>
+							<p>Принято</p>
+							<Text :text='item.accept_time'/>
+						</div>
+						<div>
+							<p>Точка В</p>
+							<Text :text='item.b' />
+						</div>
+						<div>
+							<p>Start</p>
+							<Text :text='item.start'/>
+						</div>
+						<div>
+							<p>Кол-во пассажиров</p>
+							<Text :text='item.total_passengers' />
+						</div>
+						<div>
+							<p>Finish</p>
+							<Text :text='item.end'/>
+						</div>
+						<div>
+							<p>Сумма поездки, тг</p>
+							<Text :text='item.total_cost' />
+						</div>
+					</div>
+				</div>
 			</template>
 		</Table>
   </main>
@@ -18,121 +55,6 @@ import Download from '@/components/Download.vue';
 import Bio from '@/components/Bio.vue';
 import Search from '@/components/Search.vue';
 import Table from '@/components/Table.vue';
-import ava from '@/assets/images/ava.png';
-
-const list_info = [
-	{
-		id: '0001',
-		name: 'Алибеков Алибек Алибекулы',
-		role: 'Водитель',
-		avatar: ava,
-		phone: '+7 777 777 77 77',
-		email: 'example@mail.com',
-		birthday: '15.06.2000',
-		document: '123456789102',
-		document_date: '05.12.2023',
-		teckpassport: '123456789102',
-		rating: 4.5,
-		city: 'Алматы',
-		taxi_depot: 'Alash',
-		a: 'Мауленова, 92',
-		b: 'Луганского, 21а',
-	}, {
-		id: '0001',
-		name: 'Алибеков Алибек Алибекулы',
-		role: 'Водитель',
-		avatar: ava,
-		phone: '+7 777 777 77 77',
-		email: 'example@mail.com',
-		birthday: '15.06.2000',
-		document: '123456789102',
-		document_date: '05.12.2023',
-		teckpassport: '123456789102',
-		rating: 4.5,
-		city: 'Алматы',
-		taxi_depot: 'Alash',
-		a: 'Мауленова, 92',
-		b: 'Луганского, 21а',
-	}, {
-		id: '0001',
-		name: 'Алибеков Алибек Алибекулы',
-		role: 'Водитель',
-		avatar: ava,
-		phone: '+7 777 777 77 77',
-		email: 'example@mail.com',
-		birthday: '15.06.2000',
-		document: '123456789102',
-		document_date: '05.12.2023',
-		teckpassport: '123456789102',
-		rating: 4.5,
-		city: 'Алматы',
-		taxi_depot: 'Alash',
-		a: 'Мауленова, 92',
-		b: 'Луганского, 21а',
-	}, {
-		id: '0001',
-		name: 'Алибеков Алибек Алибекулы',
-		role: 'Водитель',
-		avatar: ava,
-		phone: '+7 777 777 77 77',
-		email: 'example@mail.com',
-		birthday: '15.06.2000',
-		document: '123456789102',
-		document_date: '05.12.2023',
-		teckpassport: '123456789102',
-		rating: 4.5,
-		city: 'Алматы',
-		taxi_depot: 'Alash',
-		a: 'Мауленова, 92',
-		b: 'Луганского, 21а',
-	}, {
-		id: '0001',
-		name: 'Алибеков Алибек Алибекулы',
-		role: 'Водитель',
-		avatar: ava,
-		phone: '+7 777 777 77 77',
-		email: 'example@mail.com',
-		birthday: '15.06.2000',
-		document: '123456789102',
-		document_date: '05.12.2023',
-		teckpassport: '123456789102',
-		rating: 4.5,
-		city: 'Алматы',
-		taxi_depot: 'Alash',
-		a: 'Мауленова, 92',
-		b: 'Луганского, 21а',
-	}, {
-		id: '0001',
-		name: 'Алибеков Алибек Алибекулы',
-		role: 'Водитель',
-		avatar: ava,
-		phone: '+7 777 777 77 77',
-		email: 'example@mail.com',
-		birthday: '15.06.2000',
-		document: '123456789102',
-		document_date: '05.12.2023',
-		teckpassport: '123456789102',
-		rating: 4.5,
-		city: 'Алматы',
-		taxi_depot: 'Alash',
-		a: 'Мауленова, 92',
-		b: 'Луганского, 21а',
-	}, {
-		id: '0001',
-		name: 'Алибеков Алибек Алибекулы',
-		role: 'Водитель',
-		avatar: ava,
-		phone: '+7 777 777 77 77',
-		email: 'example@mail.com',
-		birthday: '15.06.2000',
-		document: '123456789102',
-		document_date: '05.12.2023',
-		teckpassport: '123456789102',
-		rating: 4.5,
-		city: 'Алматы',
-		taxi_depot: 'Alash',
-		a: 'Мауленова, 92',
-		b: 'Луганского, 21а',
-	},
-];
+import Text from '@/components/Text.vue';
+import users from '@/assets/data.js';
 </script>

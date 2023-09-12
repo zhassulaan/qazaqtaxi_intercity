@@ -19,13 +19,25 @@
 					<p class='name'>{{ item.name }}</p>
 					<p class='number'>{{ item.phone }}</p>
 					<p class='city'>{{ item.city }}</p>
-					<p class='a' v-if='!item.a && !item.rating'></p>
-					<p class='a' v-else-if='item.a'>{{ item.a }}</p>
-					<span class='a' v-else>
+					<span class='a' v-if="props.id === 'list'">
 						<p>{{ item.rating }}</p>
 						<Stars :rating='item.rating' />
 					</span>
-					<p class='b'>{{ item.b || item.date }}</p>
+					<p class='a' v-else-if="props.id === 'history'">{{ item.a }}</p>
+					<p class='a' v-else></p>
+					
+					<p class='b'
+						v-if="props.id === 'archive'"
+						:style="{ textAlign: 'right', paddingRight: '25px' }"
+					>
+						{{ item.date_deactivation }}
+					</p>
+					<p class='b'
+						v-else-if="props.id === 'history'"
+					>
+						{{ item.b }}
+					</p>
+					<p class='b' v-else></p>
 				</div>
 
 				<div class='table-body__row-detail'
@@ -43,24 +55,23 @@
 import { computed, ref } from 'vue';
 import Stars from '@/components/Stars.vue';
 
-const prop = defineProps({
+const props = defineProps({
+	id: String,
 	list: Array,
 });
 const pre_last_text = computed(() => {
-	const item = prop.list[0];
-	if (item.rating) {
+	if (props.id === 'list') {
 		return 'Рейтинг';
-	} else if (item.a) {
+	} else if (props.id === 'history') {
 		return 'Точка А';
 	} else {
 		return '';
 	}
 });
 const last_text = computed(() => {
-	const item = prop.list[0];
-	if (item.date) {
+	if (props.id === 'archive') {
 		return 'Дата деактиваций';
-	} else if (item.b) {
+	} else if (props.id === 'history') {
 		return 'Точка В';
 	} else {
 		return '';

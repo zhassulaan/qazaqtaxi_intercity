@@ -75,6 +75,7 @@ const props = defineProps({
 <style scoped lang='scss'>
 .counter {
 	position: relative;
+	width: 100%;
 	background-color: var(--clr-white);
 	border-radius: 15px;
 	padding: 70px 2.34375vw 30px;

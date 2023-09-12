@@ -10,7 +10,17 @@
 	.bio {
 		min-height: 624px;
 	}
-	&.history .bio {
-		min-height: 364px;
+	.history {
+		display: flex;
+		gap: 5.15625vw;
+		margin: auto;
+		.bio {
+			min-height: 364px;
+		}
+		&-right {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 20px 5.15625vw;
+		}
 	}
 }

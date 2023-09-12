@@ -24,6 +24,7 @@ const prop = defineProps({
 	width: 25px;
 	height: 26px;
 	fill: var(--clr-orange);
+	margin: -4px 0;
 	&:last-child {
 		fill: transparent;
 	}
