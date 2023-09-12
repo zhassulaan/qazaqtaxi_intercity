@@ -11,18 +11,26 @@
 				<Counter
 					:statistic='info1'
 					:icon='icons[0]'
+					button='add'
 				/>
 				<Counter
 					:statistic='info2'
 					:icon='icons[1]'
+					button='add'
 				/>
 				<Counter
 					:statistic='info3'
 					:icon='icons[2]'
+					button='download'
 				>
 					<div class='counter-body__percentage'>
 						<div class='counter-body__percentage-box'
-							:style="{ width: (info3.number1.number * 473 / info3.total.number) + 'px' }"
+							:style="{
+								width: (info3.number1.number > info3.number2.number) ?
+									'-webkit-fill-available'
+										:
+									(info3.number1.number * 473 / info3.total.number / 12.8) + 'vw'
+								}"
 						>
 							<h1 class='text'>{{ (info3.number1.number * 100 / info3.total.number).toFixed(1) + ' %' }}</h1>
 							<p class='lastmonth'>
@@ -30,7 +38,12 @@
 							</p>
 						</div>
 						<div class='counter-body__percentage-box'
-							:style="{ width: (info3.number2.number * 473 / info3.total.number) + 'px' }"
+							:style="{
+								width: (info3.number1.number < info3.number2.number) ?
+									'-webkit-fill-available'
+										:
+									(info3.number2.number * 473 / info3.total.number / 12.8) + 'vw'
+								}"
 						>
 							<h1 class='text'>{{ (info3.number2.number * 100 / info3.total.number).toFixed(1) + ' %' }}</h1>
 							<p class='lastmonth'>

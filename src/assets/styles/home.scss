@@ -8,9 +8,9 @@
 		}
 	}
 	.bio {
-		height: 624px;
+		min-height: 624px;
 	}
 	&.history .bio {
-		height: 364px;
+		min-height: 364px;
 	}
 }
