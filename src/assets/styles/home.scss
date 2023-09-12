@@ -8,19 +8,34 @@
 		}
 	}
 	.bio {
-		min-height: 624px;
+		height: 624px;
 	}
 	.history {
+		position: relative;
 		display: flex;
+		width: 100%;
 		gap: 5.15625vw;
-		margin: auto;
+		margin-left: 2.8125vw;
 		.bio {
-			min-height: 364px;
+			height: 364px;
 		}
-		&-right {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			grid-gap: 20px 5.15625vw;
+		&-content {
+			display: flex;
+			gap: 10px 5.15625vw;
+			&.default {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-gap: 10px 5.15625vw;
+			}
+			margin-bottom: -10px;
+			&__text {
+				margin-bottom: 5px;
+			}
+		}
+		&-button {
+			position: absolute;
+			top: 0;
+			right: 3.125vw;
 		}
 	}
 }

@@ -110,6 +110,7 @@ const props = defineProps({
 		}
 		&__detailed {
 			display: flex;
+			gap: 6.25vw;
 			margin-top: 30px;
 			&-number {
 				grid-gap: 8px;

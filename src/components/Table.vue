@@ -55,6 +55,7 @@
 import { computed, ref } from 'vue';
 import Stars from '@/components/Stars.vue';
 
+const emit = defineEmits();
 const props = defineProps({
 	id: String,
 	list: Array,
@@ -85,5 +86,6 @@ function handle_toggle(id) {
 	} else {
 		active.value = 0;
 	}
+	emit('close');
 }
 </script>

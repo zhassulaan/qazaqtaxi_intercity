@@ -4,6 +4,16 @@
 	&-body__row-info {
 		display: flex;
 		justify-content: space-evenly;
+		.id,
+		.name,
+		.number,
+		.city,
+		.a,
+		.b {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
 		.id {
 			width: 6.640625vw;
 		}
@@ -19,9 +29,6 @@
 		.a,
 		.b {
 			width: 13.4375vw;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
 		}
 	}
 	&-header {

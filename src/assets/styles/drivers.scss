@@ -57,6 +57,9 @@
 						}
 						.lastmonth {
 							line-height: 13px;
+							white-space: nowrap;
+							overflow: hidden;
+							text-overflow: ellipsis;
 							margin-top: 8px;
 							.btn {
 								color: var(--clr-orange);
