@@ -42,15 +42,24 @@ const routes = [
 				component: () => import('@/views/Login.vue'),
 			},
 		],
-	}, {
-		path: '/:pathMatch(.*)*',
-		redirect: '/intercity/login',
 	},
 ];
 
 const router = createRouter({
 	history: createWebHistory(),
 	routes,
+});
+
+router.beforeEach((to, from, next) => {
+  const hasToken = localStorage.getItem('qt_intercity_token');
+
+  if (to.path === '/intercity/login' && hasToken) {
+    next('/intercity/analytics');
+  } else if (to.path !== '/intercity/login' && !hasToken) {
+    next('/intercity/login');
+  } else {
+    next();
+  }
 });
 
 export default router;

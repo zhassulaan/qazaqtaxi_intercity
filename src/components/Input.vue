@@ -2,58 +2,18 @@
 	<input class='input'
 		:type='type'
     :placeholder='text'
-    :value='masked_input'
-    @input='handleInput'
+		v-model='input'
 	/>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 
 const props = defineProps({
 	type: String,
 	text: String,
-	length: Number,
-	mask: String,
 });
 const input = ref('');
-
-const masked_input = computed(() => {
-	// if (!props.mask) {
-		return input.value;
-	// }
-
-	let result = '';
-	let index = 0;
-
-	for (let i = 0; i < input.value.length; i++) {
-		let char = input.value.charAt(i);
-		let mask_char = props.mask.charAt(index);
-
-		while (mask_char !== '#') {
-			result += mask_char;
-			index++;
-			mask_char = props.mask.charAt(index);
-		}
-		
-		console.log(mask_char + ' ' + char);
-		if (mask_char === '#') {
-			result += char;
-			console.log(result);
-			index++;
-		}
-
-		if (index >= props.mask.length) {
-			break;
-		}
-	}
-
-	return result;
-});
-
-function handleInput(e) {
-	input.value = e.target.value;
-}
 </script>
 
 <style scoped>
@@ -66,5 +26,15 @@ function handleInput(e) {
 	font-size: 15px;
 	font-weight: 500;
 	padding: 0 1.5625vw;
+}
+@media screen and (max-width: 1279px) {
+	.input {
+		font-size: 14px;
+	}
+}
+@media screen and (max-width: 991px) {
+	.input {
+		font-size: 13px;
+	}
 }
 </style>

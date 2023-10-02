@@ -32,5 +32,9 @@
 			height: 6.61058vh;
 			font-size: 17px;
 		}
+		&__error {
+			text-align: center;
+			color: var(--clr-red);
+		}
 	}
 }

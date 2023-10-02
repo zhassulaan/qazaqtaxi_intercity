@@ -6,16 +6,20 @@
 		<div class='auth-form'>
 			<Input
 				type='email'
-				text='Почта'
+				text='Номер телефона'
+				v-model='user.phone'
 			/>
 			<Input
 				type='password'
 				text='Пароль'
+				v-model='user.password'
 			/>
 			<Button
 				text='Войти'
 				@click='redirect'
 			/>
+
+			<p class='auth-form__error' v-if='error'>Введите корректные данные</p>
 		</div>
   </div>
 </template>
@@ -28,11 +32,20 @@ import Input from '@/components/Input.vue';
 
 const router = useRouter();
 const user = ref({
-	email: '',
+	phone: '',
 	password: '',
 });
+const error = ref(false);
 
-function redirect() {
-	router.push('/intercity/analytics');
+async function redirect() {
+	error.value = false;
+	if (user.value.phone === '' || user.value.password === '') {
+		error.value = true;
+		console.log(user.value);
+	} else {
+		localStorage.setItem('qt_intercity_token', '123456789');
+		router.push('/intercity/analytics');
+		window.location.reload();
+	}
 }
 </script>
