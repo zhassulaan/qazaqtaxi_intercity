@@ -6,7 +6,11 @@
 			<h1 class='welcome-content__subtitle'>Почувствуйте разницу!</h1>
 		</div>
 		
-		<img class='welcome-image' src='@/assets/images/phone.png' alt='phone' />
+		<img
+			class='welcome-image'
+			src='@/assets/images/phone.png'
+			alt='phone'
+		/>
   </div>
 </template>
 

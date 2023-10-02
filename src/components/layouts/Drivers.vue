@@ -4,7 +4,7 @@
 		<div class='drivers-right'>
 			<div class='drivers-right__header'>
 				<Filter />
-				<icon-close />
+				<icon-close class='btn' />
 			</div>
 
 			<div class='drivers-right__body'>

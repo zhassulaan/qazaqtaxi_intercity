@@ -12,6 +12,5 @@ import Header from '@/components/layouts/Header.vue';
 <style scoped>
 .container {
 	background-color: var(--clr-background);
-	min-height: 100vh;
 }
 </style>

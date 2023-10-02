@@ -22,11 +22,11 @@
 		/>
 
 		<icon-add
-			class='counter-button'
+			class='counter-button btn'
 			v-if="button === 'add'"
 		/>
 		<icon-download
-			class='counter-button'
+			class='counter-button btn'
 			v-if="button === 'download'"
 		/>
 
